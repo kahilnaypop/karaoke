@@ -1,25 +1,39 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import axios from 'axios'
+
+
+let lyricKey = process.env.REACT_APP_GETLYRIC_API_KEY
+console.log(lyricKey)
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      lyrics: null
+    }
+  }
+
+  // async axios
+  getLyric = async () => {
+    const resp = await axios({
+      method: 'GET',
+      baseURL: `https://orion.apiseeds.com/api/music/lyric/:bobmarley/:nowomannocry=${lyricKey}`
+    })
+    let lyric = resp.data
+    this.setState({ lyric })
+    console.log('here are some lyrics', lyric)
+
+  }
+
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      Kahils Karaoke site
+
+      <button onClick={async () => await this.getLyric()}>Get some lyrics </button>
+       
       </div>
     );
   }
