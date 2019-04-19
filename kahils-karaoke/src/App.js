@@ -18,7 +18,7 @@ class App extends Component {
   getLyric = async () => {
     const resp = await axios({
       method: 'GET',
-      baseURL: `https://orion.apiseeds.com/api/music/lyric/:bobmarley/:nowomannocry=${lyricKey}`
+      baseURL: `https://orion.apiseeds.com/api/music/lyric/:beatles/:yesterday&apikey=${lyricKey}`
     })
     let lyric = resp.data
     this.setState({ lyric })
