@@ -3,11 +3,11 @@ import './App.css';
 import axios from 'axios';
 import NavBar from './components/layout/NavBar';
 import { Switch, Route, Router, Link } from "react-router-dom";
-// import { Button } from "react-bulma-components/full";import Home from './components/Home';
-// import FeelingsForm from './components/FeelingsForm';
-// import DetailedForm from './components/DetailedForm';
+import { Button } from "react-bulma-components/full";import Home from './components/Home';
+import FeelingsForm from './components/FeelingsForm';
+import DetailedForm from './components/DetailedForm';
+import Tracks from './components/tracks/Tracks'
 
-import { Provider } from './components/context'
 
 
 
@@ -37,58 +37,45 @@ class App extends Component {
 
   render() {
     return (
+      <div className="App">
 
-      <Provider>
-        <Router>
-          <React.Fragment>
-            <NavBar>
-              <div className="container">
-                <Switch>
-                  {/* <Route exact path="/" component={Index} /> */}
-                </Switch>
-              </div>
-            </NavBar>
-          </React.Fragment>
-        </Router>
+        <h2 className="header"> Kahils Karaoke </h2>
 
-      </Provider>
+        <Tracks />
 
-      //   <div className="App">
-      //     <h2 className="header"> Kahils Karaoke </h2>
-      //     <nav>
 
-      //       <div className="links">
-      //         <h3><Link to="/">Home</Link></h3>
-      //         <h3><Link to="/pickasong">What are you feeling?</Link></h3>
-      //         <h3><Link to="/detailed form">differenbt form</Link></h3>
+        <div className="links">
+          <h3><Link to="/">Home</Link></h3>
+          <h3><Link to="/pickasong">What are you feeling?</Link></h3>
+          <h3><Link to="/detailed form">differenbt form</Link></h3>
 
-      //       </div>
 
-      //       <main>
-      //         <Route path="/" exact component={Home} />
-      //         <Route path="/pickasong" component={FeelingsForm} />
-      //         <Route path="/details" component={DetailedForm} />
+          <main>
+            <Route path="/" exact component={Home} />
+            <Route path="/pickasong" component={FeelingsForm} />
+            <Route path="/details" component={DetailedForm} />
 
-      //       </main>
-
-      //     </div>
-
-      //     <Button claccName="button"
-      //       renderAs="a"
-      //       color="success"
-      //       size="large"
-      //       rounded
-      //       outlined
-      //     >
-      //       Send!
-      //           </Button>
+          </main>
 
 
 
-      //     <button onClick={async () => await this.getLyric()}>Get some lyrics </button>
+          <Button claccName="button"
+            renderAs="a"
+            color="success"
+            size="large"
+            rounded
+            outlined
+          >
+            Send!
+                </Button>
 
 
-      // </div>
+
+          <button onClick={async () => await this.getLyric()}>Get some lyrics </button>
+
+
+        </div>
+      </div>
     );
   }
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+import axios from 'axios';
+
 
 const musixApi = process.env.REACT_APP_MUSIX_API_KEY
 
@@ -7,29 +8,37 @@ class Tracks extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            track: []
+            track_list: []
         }
     }
 
 
 
-    componentDidMount() {
-        axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/chart_name=top&page=1&page_size=7&country=us&f_has_lyrics=1&apikey=${musixApi}`)
-            .then(resp => resp.json())
-            .then(data => {
-                console.log('track data', data)
+    componentDidMount = async () => {
+        const resp = await axios({
+            method: 'GET',
+            baseURL: `https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/chart_name=top&page=1&page_size=7&country=us&f_has_lyrics=1&apikey=${musixApi}`
+        })
 
-                this.setState({
-                    track: data
-                })
-            })
+        let trackData = resp.data
+        this.setState({
+            track_list: resp.data.message.body.track_list,
+            
+        })
+            console.log('this should be track info', track_list)
+        
+
     }
 
+
     render() {
+
+        const { trackData } = this.state
+
         return (
             <div>
-                {this.state.track}
-            </div>
+               
+            </div >
 
         );
     }
