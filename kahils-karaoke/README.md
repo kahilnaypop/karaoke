@@ -28,6 +28,20 @@ Will it be possible to send in the BPM as a searchable paramater?
 
 Learning how to use P5 for styling.
 
+Use Oauth 2 for Spotify authentification.
+
+Use reacte router to navigate between pages.
+
+- would love to be able to implement this with slack so people can recommend songs from slack
+
+- Use provider to help manage state
+
+
+- used cors anywhere to solve a network rejection issue
+
+
+
+
 
 
 
