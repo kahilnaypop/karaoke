@@ -23,18 +23,20 @@ class Tracks extends Component {
                 `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=
                 &apikey=${musixApi}`
             )
-            .then(res => {
+            .then(resp => {
                 this.setState({ lyrics: 
-                    res.data.message.body.lyrics });
+                    resp.data.message.body.lyrics });
 
                 return axios.get(
                     `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.get?track_id=&apikey=${musixApi}`
                 );
             })
-            .then(res => {
-                this.setState({ track: res.data.message.body.track });
+            .then(resp => {
+                this.setState({ track: resp.data.message.body.track });
             })
             .catch(err => console.log(err));
+
+            // console.log('this is the tracks', resp.data.message.body.track)
     }
 
 
@@ -50,7 +52,7 @@ class Tracks extends Component {
             return <Loading />;
         } else {
             return (
-                <React.Fragment>
+                <div>
                     <Link to="/" className="btn btn-dark btn-sm mb-4">
                         Go Back
                   </Link>
@@ -80,7 +82,7 @@ class Tracks extends Component {
                             <strong>Release Date</strong>:{' '}
                         </li>
                     </ul>
-                </React.Fragment>
+                </div>
             );
         }
     }

@@ -35,6 +35,8 @@ class DetailedForm extends React.Component {
     render() {
         return (
             <div>
+
+                <h1>This is the picture form</h1>
                 <Control>
                     <Button onChange={this.onChange} checked={this.state.selected === 'Yes'} value="Yes" name="question">
                         Yes

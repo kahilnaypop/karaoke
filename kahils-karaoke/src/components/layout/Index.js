@@ -1,15 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import {
-  BrowserRouter as Router
-} from "react-router-dom"
+import Tracks from '../tracks/Tracks';
+import Search from '../tracks/Search';
 
-import App from './App';
-import './index.css';
+const Index = () => {
+  return (
+    <React.Fragment>
+      <Search />
+      <Tracks />
+    </React.Fragment>
+  );
+};
 
-ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
-  document.getElementById('root')
-);
+export default Index;
