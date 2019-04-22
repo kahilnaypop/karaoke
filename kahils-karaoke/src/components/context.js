@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 
 const Context = React.createContext();
-const musixApi = process.env.REACT_APP_MUSIX_API_KEY
+
 console.log('muiix api', musixApi)
 
 export class Provider extends Component {

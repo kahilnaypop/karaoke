@@ -1,5 +1,5 @@
 import React from 'react';
-import loading from '../../images/Loading';
+import loading from '../../images/Loading.gif';
 
 export default () => {
   return (
