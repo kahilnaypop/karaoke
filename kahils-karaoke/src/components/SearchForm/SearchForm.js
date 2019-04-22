@@ -11,6 +11,7 @@ import App from '../../App'
 const musixApi = process.env.REACT_APP_MUSIX_API_KEY
 // console.log(musixApi)
 
+
 class SearchForm extends Component {
   constructor(props) {
     super(props)
@@ -19,32 +20,32 @@ class SearchForm extends Component {
     };
   }
 
-  findTrack = (dispatch, e) => {
-    e.preventDefault();
+  // findTrack = (dispatch, e) => {
+  //   e.preventDefault();
 
-    axios
-      .get(
-        `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_track=${
-        this.state.trackTitle
-        }&page_size=10&page=1&s_track_rating=desc&apikey=${
-        musixApi
-        }`
-      )
-      
-      .then(res => {
-        dispatch({
-          type: 'SEARCH_TRACKS',
-          payload: res.data.message.body.track_list
-        });
+  //   axios
+  //     .get(
+  //       `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_track=${
+  //       this.state.trackTitle
+  //       }&page_size=10&page=1&s_track_rating=desc&apikey=${
+  //       musixApi
+  //       }`
+  //     )
 
-        this.setState({ trackTitle: '' });
-      })
-      .catch(err => console.log(err));
-  };
+  //     .then(res => {
+  //       dispatch({
+  //         type: 'SEARCH_TRACKS',
+  //         payload: res.data.message.body.track_list
+  //       });
 
-  onChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
+  //       this.setState({ trackTitle: '' });
+  //     })
+  //     .catch(err => console.log(err));
+  // };
+
+  // onChange = e => {
+  //   this.setState({ [e.target.name]: e.target.value });
+  // };
 
   render() {
     return (

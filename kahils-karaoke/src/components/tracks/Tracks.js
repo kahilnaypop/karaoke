@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 
 const musixApi = process.env.REACT_APP_MUSIX_API_KEY
 
+// console.log(this.props.track)
+
 class Tracks extends Component {
     constructor(props) {
         super(props)
@@ -15,29 +17,29 @@ class Tracks extends Component {
         }
     }
 
+   
 
+    // componentDidMount() {
+    //     axios
+    //         .get(
+    //             `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=
+    //             &apikey=${musixApi}`
+    //         )
+    //         .then(resp => {
+    //             this.setState({ lyrics: 
+    //                 resp.data.message.body.lyrics });
 
-    componentDidMount() {
-        axios
-            .get(
-                `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=
-                &apikey=${musixApi}`
-            )
-            .then(resp => {
-                this.setState({ lyrics: 
-                    resp.data.message.body.lyrics });
+    //             return axios.get(
+    //                 `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.get?track_id=&apikey=${musixApi}`
+    //             );
+    //         })
+    //         .then(resp => {
+    //             this.setState({ track: resp.data.message.body.track });
+    //         })
+    //         .catch(err => console.log(err));
 
-                return axios.get(
-                    `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.get?track_id=&apikey=${musixApi}`
-                );
-            })
-            .then(resp => {
-                this.setState({ track: resp.data.message.body.track });
-            })
-            .catch(err => console.log(err));
-
-            // console.log('this is the tracks', resp.data.message.body.track)
-    }
+    //         console.log('this is the tracks', resp.data.message.body.track)
+    // }
 
 
     render() {
@@ -53,24 +55,24 @@ class Tracks extends Component {
         } else {
             return (
                 <div>
-                    <Link to="/" className="btn btn-dark btn-sm mb-4">
+                    {/* <Link to="/">
                         Go Back
                   </Link>
-                    <div className="card">
-                        <h5 className="card-header">
+                    <div >
+                        <h5 >
                             {track.track_name} by{' '}
-                            <span className="text-secondary">{track.artist_name}</span>
+                            <span>{track.artist_name}</span>
                         </h5>
-                        <div className="card-body">
-                            <p className="card-text">{lyrics.lyrics_body}</p>
+                        <div>
+                            <p>{lyrics.lyrics_body}</p>
                         </div>
                     </div>
 
-                    <ul className="list-group mt-3">
-                        <li className="list-group-item">
+                    <ul>
+                        <li>
                             <strong>Album ID</strong>: {track.album_id}
                         </li>
-                        <li className="list-group-item">
+                        <li>
                             <strong>Song Genre</strong>:{' '}
                             {track.primary_genres.music_genre_list.length === 0 ? 'NO GENRE AVAILABLE' : track.primary_genres.music_genre_list[0].music_genre.music_genre_name}
                         </li>
@@ -81,7 +83,7 @@ class Tracks extends Component {
                         <li className="list-group-item">
                             <strong>Release Date</strong>:{' '}
                         </li>
-                    </ul>
+                    </ul> */}
                 </div>
             );
         }

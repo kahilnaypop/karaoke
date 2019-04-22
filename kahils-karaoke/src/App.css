@@ -4,7 +4,7 @@
   text-align: center;
   /* background-image: url("./images/karaoke3.jpg"); */
   background-repeat: no-repeat;
-  height: 500px; 
+  height: 1200px; 
   width: 500px; 
   font-family: 'Orbitron', sans-serif;
   background-color: black;
@@ -20,18 +20,19 @@ body {
 
 .button {
 position: static;
-bottom: -40px;
+bottom: -70px;
 }
 
 .grid-list {
   display: grid;
-  grid-template-columns: auto auto auto auto auto;
+  grid-row: auto;
+  text-align: center;
 }
 
 
 .grid-item {
   background-color: rgba(255, 255, 255, 0.8);
-  font-size: 15px;
+  font-size: 10px;
   text-align: center;
 }
 

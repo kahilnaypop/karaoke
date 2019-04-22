@@ -20,7 +20,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      lyrics: null
+      track: null
     }
   }
 
@@ -33,10 +33,16 @@ class App extends Component {
       )
       .then(resp => {
         console.log(resp.data);
-        this.setState({ track_list: resp.data.message.body.track_list });
+        this.setState({ track: 
+          resp.data.message.body.track_list });
       })
+
       .catch(err => console.log('you did something wrong', err));
+
+
   }
+
+
 
   render() {
     return (
@@ -47,7 +53,9 @@ class App extends Component {
 
         <h2 className="header"> KKaraoke </h2>
 
-       {/* <Tracks /> */}
+       <Tracks />
+
+
 
 
         <div className="links">
@@ -61,7 +69,7 @@ class App extends Component {
             <Route path="/" exact component={Home} />
             <Route path="/pickasong" component={FeelingsForm} />
             <Route path="/search by track" 
-            render={() => <SearchForm track_list={this.state.track_list} />} />
+            render={() => <Tracks track={this.state.track} />} />
             
         
             {/* <Route path="/show me a picture" component={ShowMeForm} /> */}
