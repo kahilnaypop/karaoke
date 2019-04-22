@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Button } from "react-bulma-components/full";
+
 
 
 class FeelingsForm extends Component {
@@ -19,10 +21,21 @@ class FeelingsForm extends Component {
 
                 <input type="checkbox" />
                 <p> Depressed</p>
-                
-                
-                
-               
+
+
+                <Button claccName="button"
+                    renderAs="a"
+                    color="success"
+                    size="large"
+                    rounded
+                    outlined
+                >
+                    Send!
+                </Button>
+
+
+
+
             </div>
         );
     }

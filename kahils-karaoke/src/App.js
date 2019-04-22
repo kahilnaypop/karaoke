@@ -3,8 +3,10 @@ import './App.css';
 import axios from 'axios';
 import NavBar from './components/layout/NavBar';
 import { Route, Link } from "react-router-dom";
-import { Button } from "react-bulma-components/full";import Home from './components/Home';
+import Home from './components/Home';
 import FeelingsForm from './components/FeelingsForm';
+import ShowMeForm from './components/ShowMeForm';
+import SearchForm from './components/SearchForm';
 import DetailedForm from './components/SearchForm';
 import Tracks from './components/tracks/Tracks'
 
@@ -47,8 +49,8 @@ class App extends Component {
         <div className="links">
           <h3><Link to="/">Home</Link></h3>
           <h3><Link to="/pickasong">Search by feeling</Link></h3>
-          <h3><Link to="/detailed form">Search by Artist</Link></h3>
-          <h3><Link to="/detailed form">Show me a Picture</Link></h3>
+          <h3><Link to="/search by artist">Search by Artist</Link></h3>
+          <h3><Link to="/show me a picture">Show me a Picture</Link></h3>
 
 
           <main>
@@ -59,17 +61,6 @@ class App extends Component {
 
           </main>
 
-
-
-          <Button claccName="button"
-            renderAs="a"
-            color="success"
-            size="large"
-            rounded
-            outlined
-          >
-            Send!
-                </Button>
 
 
 
