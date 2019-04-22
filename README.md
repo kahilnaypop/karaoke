@@ -46,9 +46,9 @@ Use reacte router to navigate between pages.
 
 
 
-![capture logic](./kahils-karaoke/images/kara-wire2.jpg)
-![capture logic](./kahils-karaoke/images/kara-wire3.jpg)
-![capture logic](./kahils-karaoke/images/kara-wire1.jpg)
+![capture logic](./kahils-karaoke/src/images/kara-wire2.jpg)
+![capture logic](./kahils-karaoke/src/images/kara-wire3.jpg)
+![capture logic](./kahils-karaoke/src/images/kara-wire1.jpg)
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
