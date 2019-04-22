@@ -32,6 +32,6 @@ Learning how to use P5 for styling.
 
 
 
-![capture logic](./kahils-karaoke/images/kara-wire2.jpg)
+![capture logic](./kahils-karaoke/src/images/kara-wire2.jpg)
 ![capture logic](./kahils-karaoke/images/kara-wire3.jpg)
 ![capture logic](./kahils-karaoke/images/kara-wire1.jpg)
