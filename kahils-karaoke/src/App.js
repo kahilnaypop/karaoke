@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
 import NavBar from './components/layout/NavBar';
-import { Switch, Route, Router, Link } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 import { Button } from "react-bulma-components/full";import Home from './components/Home';
 import FeelingsForm from './components/FeelingsForm';
-import DetailedForm from './components/DetailedForm';
+import DetailedForm from './components/SearchForm';
 import Tracks from './components/tracks/Tracks'
 
 
@@ -39,21 +39,23 @@ class App extends Component {
     return (
       <div className="App">
 
-        <h2 className="header"> Kahils Karaoke </h2>
+        <h2 className="header"> KKaraoke </h2>
 
         <Tracks />
 
 
         <div className="links">
           <h3><Link to="/">Home</Link></h3>
-          <h3><Link to="/pickasong">What are you feeling?</Link></h3>
-          <h3><Link to="/detailed form">differenbt form</Link></h3>
+          <h3><Link to="/pickasong">Search by feeling</Link></h3>
+          <h3><Link to="/detailed form">Search by Artist</Link></h3>
+          <h3><Link to="/detailed form">Show me a Picture</Link></h3>
 
 
           <main>
             <Route path="/" exact component={Home} />
             <Route path="/pickasong" component={FeelingsForm} />
-            <Route path="/details" component={DetailedForm} />
+            <Route path="/details" component={SearchForm} />
+            <Route path="/details" component={ShowMeForm} />
 
           </main>
 
@@ -71,7 +73,7 @@ class App extends Component {
 
 
 
-          <button onClick={async () => await this.getLyric()}>Get some lyrics </button>
+          {/* <button onClick={async () => await this.getLyric()}>Get some lyrics </button> */}
 
 
         </div>

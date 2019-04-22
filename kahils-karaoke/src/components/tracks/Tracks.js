@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// import Loading from '../layout/Loading'
+import Loading from '../layout/Loading'
 import Track from './Track'
+import { Link } from 'react-router-dom';
 
 
 const musixApi = process.env.REACT_APP_MUSIX_API_KEY
@@ -17,54 +18,72 @@ class Tracks extends Component {
 
 
     componentDidMount() {
-
         axios
             .get(
-                `https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/chart_name=top&page=1&page_size=7&country=us&f_has_lyrics=1&apikey=${musixApi}`
-
+                `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=
+                &apikey=${musixApi}`
             )
-            .then(resp => {
+            .then(res => {
+                this.setState({ lyrics: 
+                    res.data.message.body.lyrics });
 
-                // console.log(resp.data)
-                // if (resp.data === undefined || resp.data.length === 0) {
-                //     return <Loading />;
-                // } else {
-                //     return <h1>loading </h1>;
-                // }
-
-
-                this.setState({
-                    track_List: resp.data.message.body.track_list
-                })
-                console.log(track_list)
+                return axios.get(
+                    `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.get?track_id=&apikey=${musixApi}`
+                );
             })
-            .catch(err => console.log(err))
-
+            .then(res => {
+                this.setState({ track: res.data.message.body.track });
+            })
+            .catch(err => console.log(err));
     }
-
 
 
     render() {
-        // const { track_List, heading } = value;
+        const { track, lyrics } = this.state;
 
-        return (
-            <div>
-                {/* <h1 classNanme="text-center"> {header}</h1> */}
-                <div className="row">
+        if (
+            track === undefined ||
+            lyrics === undefined ||
+            Object.keys(track).length === 0 ||
+            Object.keys(lyrics).length === 0
+        ) {
+            return <Loading />;
+        } else {
+            return (
+                <React.Fragment>
+                    <Link to="/" className="btn btn-dark btn-sm mb-4">
+                        Go Back
+                  </Link>
+                    <div className="card">
+                        <h5 className="card-header">
+                            {track.track_name} by{' '}
+                            <span className="text-secondary">{track.artist_name}</span>
+                        </h5>
+                        <div className="card-body">
+                            <p className="card-text">{lyrics.lyrics_body}</p>
+                        </div>
+                    </div>
 
-                    {/* {track_list.map(item => ( */}
-                        <Track 
-                        key={item.track.track_id} 
-                        track={item.track}/>
-                    ))}
-
-                </div>
-            </div>
-
-        );
+                    <ul className="list-group mt-3">
+                        <li className="list-group-item">
+                            <strong>Album ID</strong>: {track.album_id}
+                        </li>
+                        <li className="list-group-item">
+                            <strong>Song Genre</strong>:{' '}
+                            {track.primary_genres.music_genre_list.length === 0 ? 'NO GENRE AVAILABLE' : track.primary_genres.music_genre_list[0].music_genre.music_genre_name}
+                        </li>
+                        <li className="list-group-item">
+                            <strong>Explicit Words</strong>:{' '}
+                            {track.explicit === 0 ? 'No' : 'Yes'}
+                        </li>
+                        <li className="list-group-item">
+                            <strong>Release Date</strong>:{' '}
+                        </li>
+                    </ul>
+                </React.Fragment>
+            );
+        }
     }
 }
-
-
 
 export default Tracks;
