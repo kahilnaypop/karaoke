@@ -8,9 +8,12 @@ const musixApi = process.env.REACT_APP_MUSIX_API_KEY
 
 
 class Lyrics extends Component {
-    state = {
-        lyrics: {}
-    };
+    constructor(props) {
+        super(props)
+        this.state = {
+            lyrics: []
+        }
+    }
 
     //   componentDidMount() {
     //     axios
@@ -31,19 +34,28 @@ class Lyrics extends Component {
 
     renderTrackSearch = () => {
 
-        const { searchedTrack } = this.props
+        // const { searchedTrack } = this.props
+        // console.log((`renderTrackSearch: `, searchedTrack));
 
-        return searchedTrack
-            ? searchedTrack.map(searchedTrack => (
-                <p key={searchedTrack.track.track_name}>
-                    {searchedTrack.track.track_name}
-                </p>))
-            : <Loading />
+        // if (searchedTrack === []) {
+        //     return <Loading />
+        // } else {
+        //     searchedTrack.track.map(trackDeets => (
+        //         <p key={trackDeets.track_id}>
+        //             {trackDeets.track_name}
+        //         </p>))
+        // }
+
+
 
     }
 
+
     render() {
-        console.log(this.props.searchedTrack)
+        const { searchedTrack } = this.props
+        console.log(`this.props data`, this.props)
+
+        console.log(searchedTrack)
 
 
         return (

@@ -3,7 +3,6 @@ import { Button } from "react-bulma-components/full";
 import axios from 'axios';
 import '../../App.css';
 import Lyrics from '../tracks/Lyrics'
-import Loading from '../layout/Loading'
 
 
 
@@ -15,7 +14,8 @@ class SearchForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      trackTitle: ''
+      trackTitle: '',
+      searchedTrack: []
     };
 
     this.findTrack = this.findTrack.bind(this)
@@ -27,7 +27,10 @@ class SearchForm extends Component {
 
   findTrack(e) {
     e.preventDefault();
+    console.log(e.target.value);
 
+
+    console.log(`find track`, this.state.trackTitle);
 
     fetch(
       `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_track=${
@@ -36,39 +39,37 @@ class SearchForm extends Component {
     )
       .then(data => data.json())
       .then(resp => {
-        // console.log(resp.data)
-        this.setState({ searchedTrack: resp });
-        console.log(this.state.searchedTrack)
+        console.log(resp)
+        this.setState({ searchedTrack: resp.message.body.track_list[0] });
+        console.log(`st is set searched Track`, this.state.searchedTrack)
       })
       .catch(err => console.log(err));
   };
 
   trackChange(e) {
+    e.preventDefault()
     this.setState({
       trackTitle:
         e.target.value
     });
+    console.log(`my input`, this.state.trackTitle);
   };
 
+  // {track_id: 168109828, 
+  // track_name: "Hello My Love", 
+  // track_name_translation_list: Array(0), 
+  // track_rating: 96, 
+  // commontrack_id: 91266120, …}
 
-  renderTrackSearch = () => {
 
-    const { searchedTrack } = this.state
-
-    return searchedTrack
-      ? searchedTrack.map(searchedTrack => (
-        <p key={searchedTrack.track.track_name}>
-          {searchedTrack.track.track_name}
-        </p>))
-      : <Loading />
-
-  }
 
 
 
   render() {
     console.log(this.state.searchedTrack)
-    // const { searchedTrack } = this.state
+    console.log(`my input`, this.state.trackTitle);
+
+    const { searchedTrack } = this.state
 
     return (
 
@@ -84,21 +85,20 @@ class SearchForm extends Component {
               type="text"
               name="name"
               //  value={this.state.trackTitle}
-              onChange={this.trackChange} />
+              onChange={this.trackChange}
+            />
 
 
           </label>
-          <input type="submit" value="Submit" />
+          <input
+            type="submit"
+            value="Submit" />
         </form>
 
+        <Lyrics
+          searchedTrack={this.state.searchedTrack} />
 
-
-        {this.renderTrackSearch()}
-
-
-
-
-
+        <h2>{this.state.searchedTrack}</h2>
 
         {/* {value => {
           const { dispatch } = value;
