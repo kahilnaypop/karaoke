@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Loading from '../layout/Loading';
-import Moment from 'react-moment';
 
 const musixApi = process.env.REACT_APP_MUSIX_API_KEY
 
@@ -21,7 +20,7 @@ class Lyrics extends Component {
 
         return axios.get(
           `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.get?track_id=${this.props.match.params.id}&apikey=${musixApi}`)
-          
+
       })
       .then(res => {
         this.setState({ track: res.data.message.body.track });

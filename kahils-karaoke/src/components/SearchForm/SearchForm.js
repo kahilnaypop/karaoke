@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import { Button } from "react-bulma-components/full";
 import axios from 'axios';
 import '../../App.css';
-import App from '../../App'
 
-
-// import '../SearchForm/SearchForm.css'
 
 
 const musixApi = process.env.REACT_APP_MUSIX_API_KEY
@@ -18,86 +15,98 @@ class SearchForm extends Component {
     this.state = {
       trackTitle: ''
     };
+
+    this.findTrack = this.findTrack.bind(this)
+    this.onChange = this.onChange.bind(this)
+
   }
 
-  // findTrack = (dispatch, e) => {
-  //   e.preventDefault();
 
-  //   axios
-  //     .get(
-  //       `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_track=${
-  //       this.state.trackTitle
-  //       }&page_size=10&page=1&s_track_rating=desc&apikey=${
-  //       musixApi
-  //       }`
-  //     )
 
-  //     .then(res => {
-  //       dispatch({
-  //         type: 'SEARCH_TRACKS',
-  //         payload: res.data.message.body.track_list
-  //       });
+  findTrack(e) {
+    e.preventDefault();
 
-  //       this.setState({ trackTitle: '' });
-  //     })
-  //     .catch(err => console.log(err));
-  // };
+    axios
+      .get(
+        `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_track=${
+        this.state.trackTitle
+        }&page_size=10&page=1&s_track_rating=desc&apikey=${musixApi}`
+      )
 
-  // onChange = e => {
-  //   this.setState({ [e.target.name]: e.target.value });
-  // };
+      .then(resp => {
+        console.log(resp.data)
+        this.setState({ lyrics: '' });
+      })
+      .catch(err => console.log(err));
+  };
+
+  onChange (e) {
+    this.setState({ trackTitle: 
+      e.target.value });
+  };
+
 
   render() {
     return (
 
       <div className="search-form">
+        {this.findTrack}
 
-    
 
-        <form>
+        <form onSubmit = {this.findTrack} >
+
           <label>
             Name:
-             <input type="text" name="name" />
+             <input 
+             type="text" 
+             name="name"
+            //  value={this.state.trackTitle}
+            onChange={this.onChange} />
+
+
           </label>
           <input type="submit" value="Submit" />
         </form>
 
 
-        {value => {
+        {/* {value => {
           const { dispatch } = value;
           return (
             <div className="">
-              <h1 className="">
-                <i className="" /> Search For A Song
-              </h1>
-              <p className="">Get the lyrics for any song</p>
 
-              <form onSubmit={this.findTrack.bind(this, dispatch)}>
-                <div className="">
+              <form onSubmit = {this.findTrack} >
 
-                  <input
-                    type="text"
-                    className=""
-                    placeholder="Song title..."
-                    name="trackTitle"
-                    value={this.state.trackTitle}
-                    onChange={this.onChange}
-                  />
-                </div>
-                <Button className="button"
 
-                  renderAs="a"
-                  color="success"
-                  size="large"
-                  rounded
-                  outlined
-                >
-                  Get Lyrics!
-                </Button>
-              </form>
-            </div>
+
+                <input
+                  type="text"
+                  className=""
+                  placeholder="Song title..."
+                  name="trackTitle"
+                  value={this.state.trackTitle}
+                  onChange={this.onChange} */}
+                {/* /> */}
+                {/* <input type="submit"/> */}
+
+
+
+
+
+              {/* </form>
+
+              <Button className="button"
+
+                renderAs="a"
+                color="success"
+                size="large"
+                rounded
+                outlined
+              >
+                Get Lyrics!
+</Button> */}
+            {/* </div>
           );
-        }}
+        }} */}
       </div>
     );
   }
