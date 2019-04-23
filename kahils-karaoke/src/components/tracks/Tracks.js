@@ -44,12 +44,12 @@ class Tracks extends Component {
     // }
     renderTracks = () => {
 
-        const { topTenTracks } = this.props
-        console.log(topTenTracks)
-        return topTenTracks
-            ? topTenTracks.map(topTenTracks => (
-                <p key={topTenTracks.track.track_name}>
-                    {topTenTracks.track.track_name}
+        const { track } = this.props
+        console.log(track)
+        return track
+            ? track.map(track => (
+                <p key={track.track.track_name}>
+                    {track.track.track_name}
                 </p>))
             : <Loading />
 
