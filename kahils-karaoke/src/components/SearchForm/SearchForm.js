@@ -40,7 +40,7 @@ class SearchForm extends Component {
       .then(data => data.json())
       .then(resp => {
         console.log(resp)
-        this.setState({ searchedTrack: resp.message.body.track_list[0] });
+        this.setState({ searchedTrack: resp });
         console.log(`st is set searched Track`, this.state.searchedTrack)
       })
       .catch(err => console.log(err));
@@ -74,70 +74,42 @@ class SearchForm extends Component {
     return (
 
       <div className="search-form">
-        {/* {this.findTrack} */}
-
-
         <form onSubmit={this.findTrack} >
 
-          <label>
-            Name:
+          Name:
              <input
-              type="text"
-              name="name"
-              //  value={this.state.trackTitle}
-              onChange={this.trackChange}
-            />
+            type="text"
+            name="name"
+            placeholder="Song title..."
+            value={this.state.trackTitle}
+            onChange={this.trackChange}
+          />
 
-
-          </label>
           <input
             type="submit"
             value="Submit" />
         </form>
 
-        <Lyrics
+
+
+        {/* <button
+          className="btn btn-primary btn-lg btn-block mb-5"
+          type="submit"
+        >
+          Get Track Lyrics
+                </button> */}
+
+
+        {/* <Lyrics
           searchedTrack={this.state.searchedTrack} />
 
-        <h2>{this.state.searchedTrack}</h2>
-
-        {/* {value => {
-          const { dispatch } = value;
-          return (
-            <div className="">
-
-              <form onSubmit = {this.findTrack} >
-
-
-
-                <input
-                  type="text"
-                  className=""
-                  placeholder="Song title..."
-                  name="trackTitle"
-                  value={this.state.trackTitle}
-                  onChange={this.onChange} */}
-        {/* /> */}
-        {/* <input type="submit"/> */}
+        <h2>{this.state.searchedTrack}</h2> */}
 
 
 
 
 
-        {/* </form>
 
-              <Button className="button"
-
-                renderAs="a"
-                color="success"
-                size="large"
-                rounded
-                outlined
-              >
-                Get Lyrics!
-</Button> */}
-        {/* </div>
-          );
-        }} */}
       </div>
     );
   }

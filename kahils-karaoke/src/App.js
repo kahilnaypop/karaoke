@@ -45,7 +45,7 @@ class App extends Component {
 
 
   render() {
-
+    console.log(window.location.search);
     const { track } = this.state
     console.log(this.state.track);
     return (
