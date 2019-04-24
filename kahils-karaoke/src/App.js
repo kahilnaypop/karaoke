@@ -9,20 +9,25 @@ import FeelingsForm from './components/FeelingsForm';
 import SearchForm from './components/SearchForm/SearchForm';
 // import DetailedForm from './components/SearchForm';
 import Tracks from './components/tracks/Tracks'
-import YouTubeApp from './components/YouTube/YouTubeApp'
+// import YouTubeApp from './components/YouTube/YouTubeApp'
 // import SpotifySearch from './components/tracks/SpotifySearch'
+import YTSearch from 'youtube-api-v3-search';
 
 
 
 
 const musixApi = process.env.REACT_APP_MUSIX_API_KEY
-// console.log(musixApi)
+let youTubeKey=process.env.REACT_APP_YOUTUBE_API_KEY
+
+console.log(youTubeKey)
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      track: null
+      track: null,
+      videos: null,
+      video: null
     }
   }
 
@@ -41,6 +46,19 @@ class App extends Component {
       .catch(err => console.log('you did something wrong', err));
 
      
+  }
+
+
+
+  searchYouTube(term) {
+    console.log(term)
+    return YTSearch({key: youTubeKey, term: term }, (videos) =>
+    {
+      this.setState({
+        videos: videos,
+        selectedVideo: videos[0]
+       });
+    });
   }
 
 
@@ -69,7 +87,8 @@ class App extends Component {
           <main>
             <Route path="/" exact component={Home} />
             {/* <Route path="/feeling" component={FeelingsForm} /> */}
-            <Route path="/pickasong" component={SearchForm} /> 
+            <Route path="/pickasong" 
+            render={() => <SearchForm search={this.searchYouTube}/>}  />
             <Route path="/toptensongs" 
             render={() => <Tracks track={track}/>}/> 
             
@@ -78,7 +97,7 @@ class App extends Component {
 
           </main>
 
-          <YouTubeApp />
+          {/* <YouTubeApp /> */}
 
 
 

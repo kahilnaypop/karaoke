@@ -52,8 +52,10 @@ class SearchForm extends Component {
     }
 
     
-  lyricFunc = (id) => {
+  lyricFunc = (id, name) => {
     console.log(id)
+    // send the onclick to Y
+    this.props.search(name)
     fetch(
       `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${id}&apikey=${musixApi}`)
       .then(data => data.json())
@@ -119,11 +121,17 @@ class SearchForm extends Component {
     let trackIdd = this.state.searchedTrack.track_list && this.state.searchedTrack.track_list[0].track.track_id
     let trackNamee = this.state.searchedTrack.track_list && this.state.searchedTrack.track_list[0].track.track_name
 
-    let renderedLyrics = this.state.searchedTrack.track_list && this.state.searchedTrack.track_list.map(trackdata =>(
-      <h2 key={trackdata.track.track_id} onClick={()=>this.lyricFunc(trackdata.track.track_id)}>{trackdata.track.track_name} {trackdata.track.track_artist} </h2>
+    let renderedLyrics = this.state.searchedTrack.track_list && this.state.searchedTrack.track_list.map(trackdata =>{
+      let { track_id, track_name, track_artist } = trackdata.track;
+      return (
+        <h2 
+          key={track_id} 
+          onClick={()=>this.lyricFunc(track_id, track_name)}> {track_name}{track_artist}
+        </h2>
+      )
 
       
-    ))
+    })
 
     return (
       
@@ -148,7 +156,7 @@ class SearchForm extends Component {
        
             {renderedLyrics}   
          <h2 onClick={()=>this.lyricFunc(trackIdd)}>{trackNamee} </h2>
-         <h4 className="lyrics">{this.state.searchedLyrics} </h4>
+         <h4 className>{this.state.searchedLyrics} </h4>
          
 
       
