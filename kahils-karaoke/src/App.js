@@ -9,7 +9,7 @@ import FeelingsForm from './components/FeelingsForm';
 import SearchForm from './components/SearchForm/SearchForm';
 // import DetailedForm from './components/SearchForm';
 import Tracks from './components/tracks/Tracks'
-// import YouTubeAxios from './components/YouTube/YouTubeAxios'
+import YouTubeApp from './components/YouTube/YouTubeApp'
 // import SpotifySearch from './components/tracks/SpotifySearch'
 
 
@@ -77,6 +77,8 @@ class App extends Component {
             {/* <Route path="/show me a picture" co mponent={ShowMeForm} /> */}
 
           </main>
+
+          <YouTubeApp />
 
 
 

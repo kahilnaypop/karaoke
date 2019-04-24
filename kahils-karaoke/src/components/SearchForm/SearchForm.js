@@ -118,8 +118,11 @@ class SearchForm extends Component {
     // trackIdd = this.state.searchedTrack.track_list && this.state.searchedTrack.track_list[0].track.track_id
     let trackIdd = this.state.searchedTrack.track_list && this.state.searchedTrack.track_list[0].track.track_id
     let trackNamee = this.state.searchedTrack.track_list && this.state.searchedTrack.track_list[0].track.track_name
-    let potato = this.state.searchedTrack.track_list && this.state.searchedTrack.track_list.map(trackdata =>(
+
+    let renderedLyrics = this.state.searchedTrack.track_list && this.state.searchedTrack.track_list.map(trackdata =>(
       <h2 key={trackdata.track.track_id} onClick={()=>this.lyricFunc(trackdata.track.track_id)}>{trackdata.track.track_name} {trackdata.track.track_artist} </h2>
+
+      
     ))
 
     return (
@@ -143,9 +146,9 @@ class SearchForm extends Component {
               >SUBMIT</button>
           </form>
        
-            {potato}   
+            {renderedLyrics}   
          <h2 onClick={()=>this.lyricFunc(trackIdd)}>{trackNamee} </h2>
-         <h2>{this.state.searchedLyrics} </h2>
+         <h4 className="lyrics">{this.state.searchedLyrics} </h4>
          
 
       
