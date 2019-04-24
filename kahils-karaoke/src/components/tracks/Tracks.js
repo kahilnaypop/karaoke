@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import Loading from '../layout/Loading'
 // import Track from './Track'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 
 const musixApi = process.env.REACT_APP_MUSIX_API_KEY

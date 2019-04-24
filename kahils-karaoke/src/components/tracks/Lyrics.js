@@ -15,22 +15,24 @@ class Lyrics extends Component {
         }
     }
 
-    //   componentDidMount() {
-    //     axios
-    //       .get(
-    //         `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${this.props.match.params.id}&apikey=${musixApi}`)
-    //       .then(res => {
-    //         this.setState({ lyrics: res.data.message.body.lyrics });
+      componentDidMount() {
+          console.log('here')
+        axios
+          .get(
+            `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${this.props.searchedTrackId}&apikey=${musixApi}`)
+          .then(res => {
+            this.setState({ lyrics: res.data.message.body.lyrics });
+            console.log('res data', res.data)
 
-    //         return axios.get(
-    //           `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.get?track_id=${this.props.match.params.id}&apikey=${musixApi}`)
+            // return axios.get(
+            //   `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.get?track_id=${this.props.match.params.id}&apikey=${musixApi}`)
 
-    //       })
-    //       .then(res => {
-    //         this.setState({ track: res.data.message.body.track });
-    //       })
-    //       .catch(err => console.log(err));
-    //   }
+          })
+          .then(res => {
+            this.setState({ track: res.data.message.body.track });
+          })
+          .catch(err => console.log(err));
+      }
 
     renderTrackSearch = () => {
 
@@ -53,9 +55,9 @@ class Lyrics extends Component {
 
     render() {
         const { searchedTrack } = this.props
-        console.log(`this.props data`, this.props)
+        // console.log(`this.props data`, this.props.searchedTrackId)
 
-        console.log(searchedTrack)
+        // console.log(searchedTrack)
 
 
         return (
