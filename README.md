@@ -1,4 +1,4 @@
-![capture logic](./kahils-karaoke/images/src/dots.jpg)
+![capture logic](./kahils-karaoke/src/images/dots.jpg)
 
 # Karaoke 
 
