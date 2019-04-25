@@ -18,15 +18,14 @@ Use cors anywhere to solve a network rejection issue
 
 ![capture logic](./kahils-karaoke/src/images/wireframe1.jpg)
 ![capture logic](./kahils-karaoke/src/images/wireframe2.jpg)
-![capture logic](./kahils-karaoke/src/images/kara-wire1.jpg)
 
 
 ### The Reality
 
 Used minimum styling and focussed on functionallity. 
-Had to move to the YouTube API because of authentification issues with the Spotify.
+Had to move to the YouTube API because of authentification issues with the Spotify API
 
-![capture logic](./kahils-karaoke/images/src/screenofwire.jpg)
+![capture logic](./kahils-karaoke/src/images/screenofwire.jpg)
 
 
 ### Future Development
@@ -38,19 +37,23 @@ Try to get the searching by feeling functionality working.
 
 ### Recources
 
-
 Spotifys Docs
 https://developer.spotify.com/documentation/
 
 STYLE 
-Try make it look like a karaoke bar using P5 
+karaoke bar inspo
+use P5 
 install wrapper 
 https://www.npmjs.com/package/react-p5-wrapper
-also use Bulma if needed 
+
+Bulma 
 https://alligator.io/react/intro-react-bulma-components/
 
 GET LYRICS
 https://orion.apiseeds.com/api/music/lyric/:artist/:track
+
+& musixMatch
+
 
 
 
