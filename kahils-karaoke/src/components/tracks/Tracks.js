@@ -16,7 +16,7 @@ class Tracks extends Component {
         console.log(track)
         return track
             ? track.map(track => (
-                <p key={track.track.track_name}>
+                <p className="top-ten" key={track.track.track_name}>
                     {track.track.track_name}
                 </p>))
             : <Loading />

@@ -31,7 +31,6 @@ class SearchForm extends Component {
   }
 
 
-
   findTrack(evt) {
     evt.preventDefault();
 
@@ -54,7 +53,7 @@ class SearchForm extends Component {
 
 
   lyricFunc = (id, track, artist) => {
-   
+
 
     fetch(
       `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${id}&apikey=${musixApi}`)
@@ -100,8 +99,8 @@ class SearchForm extends Component {
 
 
   handleVideoSelect = (video) => {
-    this.setState({selectedVideo: video})
-}
+    this.setState({ selectedVideo: video })
+  }
 
   render() {
     const { video } = this.state
@@ -118,11 +117,11 @@ class SearchForm extends Component {
       : <Loading />;
 
 
- 
+
 
     let renderedLyrics = this.state.searchedTrack.track_list && this.state.searchedTrack.track_list.map(trackdata => {
       let { track_id, track_name, artist_name } = trackdata.track;
-    
+
       return (
         <h2 className="clickasong"
           key={track_id}
@@ -159,10 +158,12 @@ class SearchForm extends Component {
 
 
         <div className="lyric-box">
-          <h4 className="lyricss">{this.state.searchedLyrics} </h4>
+          <div className="lyricss">
+            <h4 >{this.state.searchedLyrics} </h4>
+          </div>
         </div>
 
-       
+
       </div>
 
 

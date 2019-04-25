@@ -7,6 +7,7 @@ import FeelingsForm from './components/FeelingsForm';
 import SearchForm from './components/SearchForm/SearchForm';
 import Tracks from './components/tracks/Tracks'
 import YTSearch from 'youtube-api-search';
+import Help from './components/layout/Help'
 
 
 const musixApi = process.env.REACT_APP_MUSIX_API_KEY
@@ -62,17 +63,22 @@ class App extends Component {
 
         <div className="links">
           <h3><Link to="/">Home</Link></h3>
+          <h3><Link to="/help">Help</Link></h3>
           <h3><Link to="/pickasong">Pick a Song</Link></h3>
           <h3><Link to="/toptensongs">Show top Ten!</Link></h3>
+          <h3><Link to="/searchbyfeels">Search by feels!</Link></h3>
           
 
       
           <main>
             <Route path="/" exact component={Home} />
+            <Route path="/help" component={Help} />
             <Route path="/pickasong" 
             render={() => <SearchForm/>}  />
             <Route path="/toptensongs" 
             render={() => <Tracks track={track}/>}/> 
+            <Route path="/searchbyfeels" 
+            render={() => <FeelingsForm track={track}/>}/> 
             
       
 

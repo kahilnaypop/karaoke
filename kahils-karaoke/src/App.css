@@ -4,9 +4,15 @@
   text-align: center;
   /* background-image: url("./images/karaoke3.jpg"); */
   background-repeat: no-repeat;
-  /* height: 1200px;  */
+  height: 1200px; 
   font-family: 'Orbitron', sans-serif;
-  background-color: black;
+  /* background-color: black; */
+  background-image: linear-gradient(to top, #494949 0%, rgb(0, 0, 0) 100%);
+}
+
+.top-ten {
+  color: rgb(160, 192, 252);
+  
 }
 
 .clickasong {
@@ -17,31 +23,32 @@
 
 .lyric-box {
   display: grid;
-  border-style: solid;
-  border-color: red;
-  width: 100vw;
-  height: 100vh;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: 200px;
+  grid-template-areas: 
+    ". a a ."
+    ". a a .";
   
 }
 
 
 .lyricss {
-  color: rgb(0, 0, 0);
+  color: rgb(34, 61, 218);
+  grid-area: a;
+  align-self: center;
+  justify-self: center;
   font-family: sans-serif;
-  background-color: rgb(255, 255, 255);
-  /* height: 50px; */
-  width: 40%;
-
-
+  font-size: 20px;
+  background-color: rgba(255, 255, 255, 0.486);
+  width: 60%;
 
 }
-
+/* 
 .video-link-container {
-    /* background-color: red; */
     display: flex;
     flex-direction: row-reverse;
       width: 100%; 
-      height: 400px;
 
   }
 
@@ -51,7 +58,7 @@
   max-height: 300px;
   align-self: flex-end;
   bottom: 30px;
-}
+} */
 
 .artist-style {
   color: rgb(107, 107, 251);
@@ -68,19 +75,21 @@ body {
 
 .button {
 position: static;
-bottom: -70px;
+bottom: -90px;
 }
 
 .grid-list {
-  display: grid;
+  /* display: grid;
   grid-row: auto;
-  text-align: center;
+  text-align: center; */
+  display: flex;
+  flex-direction: column;
 }
 
 
 .grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  font-size: 10px;
+  background-color: rgba(76, 85, 160, 0.8);
+  font-size: 20px;
   text-align: center;
 }
 
@@ -98,26 +107,27 @@ bottom: -70px;
 }
 
 body {
-  background-color: whitesmoke;
+  background-color: rgb(199, 180, 95);
 }
 
 .checkbox {
-  background-color: white;
+  background-color: rgb(107, 107, 251);
+  /* font-size: 30px; */
   margin: auto;
   width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid #efefef;
+  border: 1px solid #2a16e7;
   box-shadow:
   /* The top layer shadow */
       0 1px 1px rgba(0,0,0,0.15),
           /* The second layer */
-      0 10px 0 -5px #eee,
+      0 10px 0 -5px rgb(107, 107, 251),
           /* The second layer shadow */
       0 10px 1px -4px rgba(0,0,0,0.15),
           /* The third layer */
-      0 20px 0 -10px #eee,
+      0 20px 0 -10px rgb(107, 107, 251),
           /* The third layer shadow */
       0 20px 1px -9px rgba(0,0,0,0.15);
   padding: 30px;
@@ -129,10 +139,10 @@ body {
   align-items: center;
   padding: 30px 20px 0;
   width: 70%;
-  border-bottom: 1px solid #cecece;
+  border-bottom: 1px solid #92c280;
   font-family: 'Orbitron', sans-serif;
   font-weight: 100;
-  font-size: 15px;
+  font-size: 50px;
   color: #333333;
 }
 
