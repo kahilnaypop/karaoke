@@ -13,7 +13,7 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
     "spotify-web-api-js": "^0.22.1",
-    "youtube-api-v3-search": "^1.2.1"
+    "youtube-api-search": "0.0.5"
   },
   "scripts": {
     "start": "react-scripts start",

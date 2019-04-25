@@ -5,10 +5,40 @@
   /* background-image: url("./images/karaoke3.jpg"); */
   background-repeat: no-repeat;
   height: 1200px; 
-  width: 400px; 
+  /* width: 400px;  */
   font-family: 'Orbitron', sans-serif;
   background-color: black;
 }
+
+.clickasong {
+  color: green;
+  cursor: pointer;
+}
+
+.lyricss {
+  color: rgb(0, 0, 0);
+  font-family: sans-serif;
+  background-color: rgb(255, 255, 255);
+  /* height: 50px; */
+  width: 40%;
+
+
+}
+
+.video-link {
+  display: grid;
+  grid-row: auto;
+}
+
+.artist-style {
+  color: blue;
+}
+
+.lyric-box {
+  display: grid;
+  grid-row: auto;
+}
+
 
 body {
   margin: 0;

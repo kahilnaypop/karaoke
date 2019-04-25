@@ -1,30 +1,26 @@
 import React from 'react';
+import Loading from '../../components/layout/Loading';
 
-class YouTubeSearch extends React.Component {
-    state = {
-        term: ''
 
+const YouTubeSearch = ({video}) => {
+    if (!video) {
+        return <div> </div>
     }
 
-    handleChange = (evt) => {
-        this.setState({
-            term: evt.target.value
-        })
-    }
-    handleSubmit = evt => {
-        evt.preventDefault();
-        this.props.handleFormSubmit(this.state.term)
-    }
-
-    render() {
-        return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                <label htmlFor={this.handleChange} name='video-search'
-                type='text' value={this.state.term}/>
-                </form>
+    const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
+    console.log(typeof(video));
+    return (
+        <div>
+            <div className="video-link">
+                <iframe src={videoSrc} allowFullScreen title='Video player'/>
             </div>
-        )
-    }
+            <div className='ui segment'>
+                <h4 className='ui header'>{video.snippet.title}</h4>
+                {/* <p>{video.snippet.description}</p> */}
+            </div>
+        </div>
+
+    )
 }
+
 export default YouTubeSearch

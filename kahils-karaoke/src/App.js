@@ -11,7 +11,7 @@ import SearchForm from './components/SearchForm/SearchForm';
 import Tracks from './components/tracks/Tracks'
 // import YouTubeApp from './components/YouTube/YouTubeApp'
 // import SpotifySearch from './components/tracks/SpotifySearch'
-import YTSearch from 'youtube-api-v3-search';
+import YTSearch from 'youtube-api-search';
 
 
 
@@ -19,7 +19,7 @@ import YTSearch from 'youtube-api-v3-search';
 const musixApi = process.env.REACT_APP_MUSIX_API_KEY
 let youTubeKey=process.env.REACT_APP_YOUTUBE_API_KEY
 
-console.log(youTubeKey)
+// console.log('you tube key', youTubeKey)
 
 class App extends Component {
   constructor(props) {
@@ -43,14 +43,12 @@ class App extends Component {
           resp.data.message.body.track_list});
 // return resp.data
       })
-      .catch(err => console.log('you did something wrong', err));
-
-     
+      .catch(err => console.log('you did something wrong', err)); 
   }
 
 
 
-  searchYouTube(term) {
+  searchYouTube = (term) => {
     console.log(term)
     return YTSearch({key: youTubeKey, term: term }, (videos) =>
     {
@@ -59,6 +57,7 @@ class App extends Component {
         selectedVideo: videos[0]
        });
     });
+    // console.log('this is the term', term)
   }
 
 
@@ -75,20 +74,16 @@ class App extends Component {
 
         <div className="links">
           <h3><Link to="/">Home</Link></h3>
-          <h3><Link to="/feeling">Search by feeling</Link></h3>
           <h3><Link to="/pickasong">Pick a Song</Link></h3>
-          <h3><Link to="/toptensongs">Show tp Ten!</Link></h3>
+          <h3><Link to="/toptensongs">Show top Ten!</Link></h3>
           
 
-          {/* <h3><Link to="/show me a picture">Show me a Picture</Link></h3> */}
-        {/* <SpotifySearch /> */}
-        {/* <YouTubeAxios /> */}
+        
 
           <main>
             <Route path="/" exact component={Home} />
-            {/* <Route path="/feeling" component={FeelingsForm} /> */}
             <Route path="/pickasong" 
-            render={() => <SearchForm search={this.searchYouTube}/>}  />
+            render={() => <SearchForm/>}  />
             <Route path="/toptensongs" 
             render={() => <Tracks track={track}/>}/> 
             

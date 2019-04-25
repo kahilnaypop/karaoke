@@ -20,7 +20,7 @@ class FeelingsForm extends Component {
 
                     <p className="grid-item"> Happy</p>
 
-                    <input type="checkbox" className="grid-item" />
+                    <input type="checkbox" />
                     <p className="grid-item"> Sad</p>
 
                     <input type="checkbox" />
