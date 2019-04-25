@@ -1,4 +1,4 @@
-![capture logic](./kahils-karaoke/images/dots.jpg)
+![capture logic](./kahils-karaoke/images/src/dots.jpg)
 
 # Karaoke 
 
@@ -16,9 +16,9 @@ Would love to be able to implement this with slack so people can recommend songs
 Use provider to help manage state
 Use cors anywhere to solve a network rejection issue
 
-![capture logic](./kahils-karaoke/images/wireframe1.jpg)
-![capture logic](./kahils-karaoke/images/wireframe2.jpg)
-![capture logic](./kahils-karaoke/images/kara-wire1.jpg)
+![capture logic](./kahils-karaoke/src/images/wireframe1.jpg)
+![capture logic](./kahils-karaoke/src/images/wireframe2.jpg)
+![capture logic](./kahils-karaoke/src/images/kara-wire1.jpg)
 
 
 ### The Reality
@@ -26,7 +26,7 @@ Use cors anywhere to solve a network rejection issue
 Used minimum styling and focussed on functionallity. 
 Had to move to the YouTube API because of authentification issues with the Spotify.
 
-![capture logic](./kahils-karaoke/images/screenofwire.jpg)
+![capture logic](./kahils-karaoke/images/src/screenofwire.jpg)
 
 
 ### Future Development
