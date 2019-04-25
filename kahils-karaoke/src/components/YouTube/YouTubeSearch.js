@@ -4,7 +4,7 @@ import './../../App.css'
 
 const YouTubeSearch = ({ video }) => {
     if (!video) {
-        return <div>loading </div>
+        return <div> </div>
     }
 
     const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;

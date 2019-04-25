@@ -2,42 +2,71 @@ import React, { Component } from 'react';
 import { Button } from "react-bulma-components/full";
 import '../App.css';
 
-// set up a handle form function 
-// take that input and store it in props
-// send that input to the lyric searching thing
-// train form
-// lexicanna 
-
-
-
-// handleInput = () => {
-
-// }
-
-
+const musixApi = process.env.REACT_APP_MUSIX_API_KEY
 
 class FeelingsForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            feelingSubmit: null
-
-
+            feelsSubmit: null
 
         }
 
-    }
-    setFeelings = () => {
-        console.log('set the feels')
+
+        this.setFeelings = this.setFeelings.bind(this)
+        this.feelsTrackChange = this.feelsTrackChange.bind(this)
 
     }
 
 
+    setFeelings(evt) {
+        evt.preventDefault();
+       
+        let trackId
+        fetch(
+            `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_track=africa&page_size=4&page=1&s_track_rating=desc&apikey=${musixApi}`
+        )
+            .then(data => data.json())
+            .then(resp => {
+                this.setState({
+                    feelsSubmit: resp.message.body,
 
-    // handleSubmitForm(event) {
-    //     event.preventDefault()
-    //     this.submitForm()
-    // }
+                });
+               
+                trackId = resp.message.body.track_list[0].track.track_id
+            })
+            .catch(err => console.log(err));
+
+    }
+
+
+    lyricFeelFunc = (id, track, artist) => {
+
+
+        fetch(
+            `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${id}&apikey=${musixApi}`)
+            .then(data => data.json())
+            .then(async resp => {
+                await this.setState({
+                    searchedLyrics: resp.message.body.lyrics.lyrics_body
+                });
+                this.searchYouTube(track, artist)
+
+            })
+            .catch(err => console.log(err));
+
+    };
+
+
+
+
+    feelsTrackChange(evt) {
+        evt.preventDefault()
+        this.setState({
+            trackTitle:
+                evt.target.value
+        });
+    };
 
 
 
@@ -71,7 +100,7 @@ class FeelingsForm extends Component {
                 </div>
 
                 <Button className="button"
-                    onClick={this.setFeelings()}
+                    onClick={this.setFeelings}
                     renderAs="a"
                     color="success"
                     size="large"
@@ -85,5 +114,6 @@ class FeelingsForm extends Component {
         );
     }
 }
+
 
 export default FeelingsForm;

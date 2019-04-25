@@ -133,7 +133,6 @@ class SearchForm extends Component {
     return (
       <div className="search-form">
 
-
         <form onSubmit={this.findTrack} >
 
           Name:
