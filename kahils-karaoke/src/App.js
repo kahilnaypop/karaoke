@@ -1,25 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
-// import NavBar from './components/layout/NavBar';
 import { Route, Link } from "react-router-dom";
 import Home from './components/Home';
 import FeelingsForm from './components/FeelingsForm';
-// import ShowMeForm from './components/ShowMeForm';
 import SearchForm from './components/SearchForm/SearchForm';
-// import DetailedForm from './components/SearchForm';
 import Tracks from './components/tracks/Tracks'
-// import YouTubeApp from './components/YouTube/YouTubeApp'
-// import SpotifySearch from './components/tracks/SpotifySearch'
 import YTSearch from 'youtube-api-search';
-
-
 
 
 const musixApi = process.env.REACT_APP_MUSIX_API_KEY
 let youTubeKey=process.env.REACT_APP_YOUTUBE_API_KEY
 
-// console.log('you tube key', youTubeKey)
 
 class App extends Component {
   constructor(props) {
@@ -38,10 +30,9 @@ class App extends Component {
           musixApi}`
       )
       .then(resp => {
-        // console.log(resp.data);
         this.setState({ track: 
           resp.data.message.body.track_list});
-// return resp.data
+
       })
       .catch(err => console.log('you did something wrong', err)); 
   }
@@ -57,20 +48,17 @@ class App extends Component {
         selectedVideo: videos[0]
        });
     });
-    // console.log('this is the term', term)
+
   }
 
 
 
   render() {
-    // console.log(window.location.search);
     const { track } = this.state
-    // console.log(this.state.track);
     return (
       <div className="App">
         <h2 className="header"> KKaraoke </h2>
 
-       {/* <Tracks /> */}
 
         <div className="links">
           <h3><Link to="/">Home</Link></h3>
@@ -78,8 +66,7 @@ class App extends Component {
           <h3><Link to="/toptensongs">Show top Ten!</Link></h3>
           
 
-        
-
+      
           <main>
             <Route path="/" exact component={Home} />
             <Route path="/pickasong" 
@@ -87,17 +74,9 @@ class App extends Component {
             <Route path="/toptensongs" 
             render={() => <Tracks track={track}/>}/> 
             
-        
-            {/* <Route path="/show me a picture" co mponent={ShowMeForm} /> */}
+      
 
           </main>
-
-          {/* <YouTubeApp /> */}
-
-
-
-
-          {/* <button onClick={async () => await this.getLyric()}>Get some lyrics </button> */}
 
 
         </div>

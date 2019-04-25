@@ -17,26 +17,6 @@ class Track extends Component {
         return (
             <div>
                 
-
-
-                {/* <h5>{track.artist_name}</h5>
-            <p><strong>
-                <i /> Track
-                     </strong>
-                : {track.track_name}
-                <br />
-                <strong>
-                    <i /> Album
-                         </strong>
-                : {track.album_name}
-            </p>
-
-
-            <Link
-                to={`lyrics/track/${track.track_id}`}
-                className="lyrics">
-                <i /> View Lyrics
-                    </Link> */}
             </div>
 
 

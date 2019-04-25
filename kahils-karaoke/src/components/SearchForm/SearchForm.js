@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
-// import { Button } from "react-bulma-components/full";
+import { Button } from "react-bulma-components/full";
 import axios from 'axios';
-// import '../../App.css';
-// import Lyrics from '../tracks/Lyrics'
 import '../../App.css';
 import YTSearch from 'youtube-api-search';
 import Loading from '../layout/Loading';
 import YouTubeSearch from '../YouTube/YouTubeSearch'
-// import VideoList from '../YouTube/VideoList'
 
 
 
 const musixApi = process.env.REACT_APP_MUSIX_API_KEY
-// console.log(musixApi)
+
 let youTubeKey = process.env.REACT_APP_YOUTUBE_API_KEY
 
 
@@ -37,9 +34,7 @@ class SearchForm extends Component {
 
   findTrack(evt) {
     evt.preventDefault();
-    // console.log(evt.target.userInput.value);
 
-    // console.log(`find track`, this.state.trackTitle);
     let trackId
     fetch(
       `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_track=${
@@ -50,18 +45,16 @@ class SearchForm extends Component {
         this.setState({
           searchedTrack: resp.message.body,
         });
-        // console.log(resp.message.body.track_list[0].track.track_id)
+
         trackId = resp.message.body.track_list[0].track.track_id
       })
       .catch(err => console.log(err));
-    // console.log(trackId)
+
   }
 
 
   lyricFunc = (id, track, artist) => {
-    // console.log(id, track)
-    // send the onclick to Y
-    // this.props.search(track)
+   
 
     fetch(
       `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${id}&apikey=${musixApi}`)
@@ -102,7 +95,7 @@ class SearchForm extends Component {
       trackTitle:
         evt.target.value
     });
-    // console.log(`my input`, this.state.trackTitle);
+
   };
 
 
@@ -112,7 +105,7 @@ class SearchForm extends Component {
 
   render() {
     const { video } = this.state
-    // console.log('this is the term', this.state.videos)
+
 
 
     let trackIdd = this.state.searchedTrack.track_list && this.state.searchedTrack.track_list[0].track.track_id
@@ -125,15 +118,11 @@ class SearchForm extends Component {
       : <Loading />;
 
 
-    // let videoSearch = video === null ? null : <YouTubeSearch 
-    // video={video}
-    // />
-
-
+ 
 
     let renderedLyrics = this.state.searchedTrack.track_list && this.state.searchedTrack.track_list.map(trackdata => {
       let { track_id, track_name, artist_name } = trackdata.track;
-      // console.log('this is the track data', trackdata)
+    
       return (
         <h2 className="clickasong"
           key={track_id}
@@ -145,10 +134,6 @@ class SearchForm extends Component {
     return (
       <div className="search-form">
 
-        <YouTubeSearch
-          video={video}
-        />
-        {/* <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/> */}
 
         <form onSubmit={this.findTrack} >
 
@@ -166,17 +151,21 @@ class SearchForm extends Component {
 
 
         {renderedLyrics}
+        {trackNamee}
 
-        {/* <div className="clickasong">
-          <h2 onClick={() => this.lyricFunc(trackIdd)}>{trackNamee} </h2>
-        </div> */}
+        <YouTubeSearch
+          video={video}
+        />
+
 
         <div className="lyric-box">
           <h4 className="lyricss">{this.state.searchedLyrics} </h4>
         </div>
-        {/* {trackIdd} */}
-        {trackNamee}
+
+       
       </div>
+
+
     );
   }
 }
