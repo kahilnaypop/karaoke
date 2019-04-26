@@ -1,5 +1,4 @@
 import React from 'react';
-import whitneyVideo from './../../images/whitneyVid.vob'
 
 
 function PrintLyrics() {
@@ -7,7 +6,7 @@ function PrintLyrics() {
     return (
         <div className="whitney-wrapper">
             <div className="whitney-box">
-                <img src={whitneyVideo} />
+        
 
                 Clock strikes upon the hour
                 And the sun begins to fade
