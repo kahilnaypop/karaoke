@@ -4,7 +4,7 @@
   text-align: center;
   /* background-image: url("./images/karaoke3.jpg"); */
   background-repeat: no-repeat;
-  height: 1200px; 
+  height: 1000px; 
   font-family: 'Orbitron', sans-serif;
   /* background-color: black; */
   background-image: linear-gradient(to top, #494949 0%, rgb(0, 0, 0) 100%);
@@ -15,14 +15,37 @@
   
 }
 
+.whitney-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: 400px;
+  grid-template-areas: 
+    ". a a ."
+    ". a a .";
+
+}
+
+.whitney-box {
+  color: rgb(34, 61, 218);
+  grid-area: a;
+  align-self: center;
+  justify-self: center;
+  font-family: sans-serif;
+  font-size: 20px;
+  background-color: rgba(255, 255, 255, 0.486);
+  width: 100%;
+
+}
+
 .clickasong {
   color: green;
   cursor: pointer;
 }
 
 
-.lyric-box {
-  display: grid;
+.lyric-wrapper, .help-wrapper {
+  display: flex;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
   grid-auto-rows: 200px;
@@ -33,7 +56,7 @@
 }
 
 
-.lyricss {
+.lyrics .help {
   color: rgb(34, 61, 218);
   grid-area: a;
   align-self: center;
@@ -44,6 +67,8 @@
   width: 60%;
 
 }
+
+
 /* 
 .video-link-container {
     display: flex;
@@ -153,6 +178,13 @@ input[type=checkbox] {
 
 input[type=checkbox]:focus {
   outline: 0;
+}
+
+.sad, .happy, .groovy, .sexy, .depressed {
+  grid-area: a;
+  align-self: center;
+  justify-self: center;
+
 }
 
 

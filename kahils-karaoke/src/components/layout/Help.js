@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class Help extends Component {
     render() {
         return (
-            <div className="lyric-box">
-            <div className="lyricss">
+            <div className="help-wrapper">
+            <div className="help">
                 Welcome to Karaoke song finder!! 
                 If you want to search by track just type it into the search bar and click on the link to display the lyrics and video!
                 If you're looking for inspiration try checking the top 10 tracks in the charts today! Otherwise you can search by feelings. Enjoy!!

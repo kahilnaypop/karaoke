@@ -15,10 +15,11 @@ const YouTubeSearch = ({ video }) => {
                 <h4 className='ui header'>{video.snippet.title}</h4>
                 {/* <p>{video.snippet.description}</p> */}
             </div>
-            <div className="video-link-container">
-                <div className="video-link">
-                    <iframe src={videoSrc} allowFullScreen title='Video player' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>/>
-                </div>
+            
+                <div className="lyricss">
+                
+                    <iframe src={videoSrc} allowFullScreen title='Video player' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                
             </div>
 
 

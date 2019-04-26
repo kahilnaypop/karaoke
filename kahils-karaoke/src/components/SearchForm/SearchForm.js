@@ -9,7 +9,6 @@ import YouTubeSearch from '../YouTube/YouTubeSearch'
 
 
 const musixApi = process.env.REACT_APP_MUSIX_API_KEY
-
 let youTubeKey = process.env.REACT_APP_YOUTUBE_API_KEY
 
 
@@ -142,9 +141,9 @@ class SearchForm extends Component {
             placeholder="Track title..."
           />
 
-          <button
+          <Button
             value="Submit"
-          >SUBMIT</button>
+          >SUBMIT</Button>
         </form>
 
 
@@ -156,8 +155,8 @@ class SearchForm extends Component {
         />
 
 
-        <div className="lyric-box">
-          <div className="lyricss">
+        <div className="lyric-wrapper">
+          <div className="lyrics">
             <h4 >{this.state.searchedLyrics} </h4>
           </div>
         </div>
