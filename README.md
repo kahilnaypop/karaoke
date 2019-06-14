@@ -19,6 +19,15 @@ Use cors anywhere to solve a network rejection issue
 ![capture logic](./kahils-karaoke/src/images/wireframe1.jpg)
 ![capture logic](./kahils-karaoke/src/images/wireframe2.jpg)
 
+<img href="https://user-images.githubusercontent.com/29616227/59494562-b2095600-8e8d-11e9-8068-402e3bf06fc0.jpg">
+
+
+<img href="https://user-images.githubusercontent.com/29616227/59494585-c5b4bc80-8e8d-11e9-9e4d-a831e7d9de1b.jpg">
+
+
+<img width=300 href="https://user-images.githubusercontent.com/29616227/59494617-d5340580-8e8d-11e9-9084-33df06dbfd00.jpg">
+
+
 
 ### The Reality
 
