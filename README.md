@@ -38,12 +38,67 @@ Use cors anywhere to solve a network rejection issue
 
 
 
+## Sneak Peak
+
+```JSX
+findTrack(evt) {
+    evt.preventDefault();
+    let trackId
+    fetch(
+      `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_track=${
+      evt.target.userInput.value}&page_size=4&page=1&s_track_rating=desc&apikey=${musixApi}`
+    )
+      .then(data => data.json())
+      .then(resp => {
+        this.setState({
+          searchedTrack: resp.message.body,
+        });
+        trackId = resp.message.body.track_list[0].track.track_id
+      })
+      .catch(err => console.log(err));
+  }
+  lyricFunc = (id, track, artist) => {
+    fetch(
+      `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${id}&apikey=${musixApi}`)
+      .then(data => data.json())
+      .then(async resp => {
+        await this.setState({
+          searchedLyrics: resp.message.body.lyrics.lyrics_body
+        });
+        this.searchYouTube(track, artist)
+      })
+      .catch(err => console.log(err));
+  };
+  searchYouTube = (term) => {
+    YTSearch({ key: youTubeKey, term: term }, (data) => {
+      try {
+        console.log(data);
+        this.setState({
+          videos: data,
+          video: data[0]
+        });
+        console.log(this.state.video);
+      } catch (err) {
+        alert(err.message)
+      }
+    });
+  }
+  trackChange(evt) {
+    evt.preventDefault()
+    this.setState({
+      trackTitle:
+        evt.target.value
+    });
+  };
+```
+
+
 ### MVP
 
 Settled on a minimalist look and focussed on functionallity. 
 Ended up using YouTube API.
 
-![capture logic](./kahils-karaoke/src/images/screenofwire.jpg)
+
 
 
 ### MVP 2
