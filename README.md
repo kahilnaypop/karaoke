@@ -16,35 +16,43 @@ Would love to be able to implement this with slack so people can recommend songs
 Use provider to help manage state
 Use cors anywhere to solve a network rejection issue
 
-![capture logic](./kahils-karaoke/src/images/wireframe1.jpg)
-![capture logic](./kahils-karaoke/src/images/wireframe2.jpg)
+# Wireframes
 
-<img href="https://user-images.githubusercontent.com/29616227/59494562-b2095600-8e8d-11e9-8068-402e3bf06fc0.jpg">
-
-
-<img href="https://user-images.githubusercontent.com/29616227/59494585-c5b4bc80-8e8d-11e9-9e4d-a831e7d9de1b.jpg">
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/29616227/59503764-8ee8a180-8ea1-11e9-88db-f0f030d53014.jpg">
 
 
-<img width=300 href="https://user-images.githubusercontent.com/29616227/59494617-d5340580-8e8d-11e9-9084-33df06dbfd00.jpg">
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/29616227/59503795-9e67ea80-8ea1-11e9-8792-7c3b0f2d6749.jpg">
+
+
+# Wireframes
+
+
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/29616227/59494562-b2095600-8e8d-11e9-8068-402e3bf06fc0.jpg">
+
+
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/29616227/59494585-c5b4bc80-8e8d-11e9-9e4d-a831e7d9de1b.jpg">
+
+
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/29616227/59494617-d5340580-8e8d-11e9-9084-33df06dbfd00.jpg">
 
 
 
-### The Reality
 
-Used minimum styling and focussed on functionallity. 
-Had to move to the YouTube API because of authentification issues with the Spotify API
+### MVP
+
+Settled on a minimalist look and focussed on functionallity. 
+Ended up using YouTube API.
 
 ![capture logic](./kahils-karaoke/src/images/screenofwire.jpg)
 
 
-### Future Development
-
-Revisit with the Spotify API 
-Try to get the searching by feeling functionality working.
+### MVP 2
+Develop the search by feeling functionality further.
 
 
 
-### Recources
+
+### Technology
 
 Spotifys Docs
 https://developer.spotify.com/documentation/
@@ -62,6 +70,8 @@ GET LYRICS
 https://orion.apiseeds.com/api/music/lyric/:artist/:track
 
 & musixMatch
+
+
 
 
 
