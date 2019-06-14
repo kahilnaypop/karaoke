@@ -12,6 +12,7 @@
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
+    "semantic-ui-react": "^0.87.1",
     "spotify-web-api-js": "^0.22.1",
     "youtube-api-search": "0.0.5"
   },

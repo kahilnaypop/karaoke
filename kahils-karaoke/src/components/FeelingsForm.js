@@ -12,20 +12,15 @@ class FeelingsForm extends Component {
         this.state = {
             feelsSubmit: null,
             feelsLyrics: null
-
         }
-
-
         this.setFeelings = this.setFeelings.bind(this)
         this.feelsTrackChange = this.feelsTrackChange.bind(this)
-
     }
 
 
 
     setFeelings(evt) {
         evt.preventDefault();
-
         let trackId
         fetch(
             `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_track=${
@@ -35,15 +30,10 @@ class FeelingsForm extends Component {
             .then(resp => {
                 this.setState({
                     feelsSubmit: resp.message.body,
-
                 });
-
                 trackId = resp.message.body.track_list[0].track.track_id
             })
             .catch(err => console.log(err));
-
-        // this.lyricFeelFunc
-
     }
 
 
@@ -58,7 +48,6 @@ class FeelingsForm extends Component {
                     feelsLyrics: resp.message.body.lyrics.lyrics_body
                 });
                 this.searchYouTube(track, artist)
-
             })
             .catch(err => console.log(err));
 
@@ -126,7 +115,7 @@ class FeelingsForm extends Component {
                         onClick={this.handlePageChange}
                         type="submit"
                         renderAs="a"
-                        color="success"
+                        color="link"
                         size="large"
                         rounded
                         outlined

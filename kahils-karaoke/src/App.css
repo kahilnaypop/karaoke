@@ -101,6 +101,11 @@ body {
 .button {
 position: static;
 bottom: -90px;
+
+}
+
+.submit-button {
+  cursor: pointer;
 }
 
 .grid-list {
@@ -113,9 +118,13 @@ bottom: -90px;
 
 
 .grid-item {
-  background-color: rgba(76, 85, 160, 0.8);
+  background-color: rgba(183, 184, 193, 0.8);
   font-size: 20px;
-  text-align: center;
+  width: 20vw;
+display:flex;
+justify-content: center;
+margin: auto;
+
 }
 
 .header {
@@ -136,14 +145,14 @@ body {
 }
 
 .checkbox {
-  background-color: rgb(107, 107, 251);
+  background-color: rgb(179, 179, 191);
   /* font-size: 30px; */
   margin: auto;
   width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid #2a16e7;
+  border: 1px solid #958ce3;
   box-shadow:
   /* The top layer shadow */
       0 1px 1px rgba(0,0,0,0.15),

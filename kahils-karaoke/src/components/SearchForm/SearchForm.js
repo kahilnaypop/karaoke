@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from "react-bulma-components/full";
+import { Button, Form } from "semantic-ui-react";
 import axios from 'axios';
 import '../../App.css';
 import YTSearch from 'youtube-api-search';
@@ -32,7 +32,6 @@ class SearchForm extends Component {
 
   findTrack(evt) {
     evt.preventDefault();
-
     let trackId
     fetch(
       `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_track=${
@@ -43,17 +42,13 @@ class SearchForm extends Component {
         this.setState({
           searchedTrack: resp.message.body,
         });
-
         trackId = resp.message.body.track_list[0].track.track_id
       })
       .catch(err => console.log(err));
-
   }
 
 
   lyricFunc = (id, track, artist) => {
-
-
     fetch(
       `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${id}&apikey=${musixApi}`)
       .then(data => data.json())
@@ -62,10 +57,8 @@ class SearchForm extends Component {
           searchedLyrics: resp.message.body.lyrics.lyrics_body
         });
         this.searchYouTube(track, artist)
-
       })
       .catch(err => console.log(err));
-
   };
 
 
@@ -77,13 +70,11 @@ class SearchForm extends Component {
           videos: data,
           video: data[0]
         });
-
         console.log(this.state.video);
       } catch (err) {
         alert(err.message)
       }
     });
-
   }
 
 
@@ -93,14 +84,12 @@ class SearchForm extends Component {
       trackTitle:
         evt.target.value
     });
-
   };
 
 
   handleVideoSelect = (video) => {
     this.setState({ selectedVideo: video })
   }
-
   render() {
     const { video } = this.state
 
@@ -132,19 +121,22 @@ class SearchForm extends Component {
     return (
       <div className="search-form">
 
-        <form onSubmit={this.findTrack} >
+        <Form onSubmit={this.findTrack} >
 
           Name:
               <input
             type="text"
             name="userInput"
             placeholder="Track title..."
+            pointer=""
           />
-
-          <Button
+          <button
+            className="submit-button"
             value="Submit"
-          >SUBMIT</Button>
-        </form>
+
+          >Submit</button>
+
+        </Form>
 
 
         {renderedLyrics}
