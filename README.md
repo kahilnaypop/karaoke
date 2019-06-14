@@ -18,16 +18,16 @@ Use cors anywhere to solve a network rejection issue
 
 # Wireframes
 
-<img width="1440" alt="image" src="https://user-images.githubusercontent.com/29616227/59503764-8ee8a180-8ea1-11e9-88db-f0f030d53014.jpg">
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/29616227/59503764-8ee8a180-8ea1-11e9-88db-f0f030d53014.jpg">
 
 
-<img width="1440" alt="image" src="https://user-images.githubusercontent.com/29616227/59503795-9e67ea80-8ea1-11e9-8792-7c3b0f2d6749.jpg">
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/29616227/59503795-9e67ea80-8ea1-11e9-8792-7c3b0f2d6749.jpg">
 
 
-# Wireframes
+# Sneak Peak
 
 
-<img width="1440" alt="image" src="https://user-images.githubusercontent.com/29616227/59494562-b2095600-8e8d-11e9-8068-402e3bf06fc0.jpg">
+<!-- <img width="1440" alt="image" src="https://user-images.githubusercontent.com/29616227/59494562-b2095600-8e8d-11e9-8068-402e3bf06fc0.jpg"> -->
 
 
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/29616227/59494585-c5b4bc80-8e8d-11e9-9e4d-a831e7d9de1b.jpg">
@@ -37,8 +37,7 @@ Use cors anywhere to solve a network rejection issue
 
 
 
-
-## Sneak Peak
+## Sneak Peak II
 
 ```JSX
 findTrack(evt) {
@@ -127,7 +126,8 @@ https://orion.apiseeds.com/api/music/lyric/:artist/:track
 & musixMatch
 
 
-
+## Try it here
+https://kahils-karaoke-app.herokuapp.com/
 
 
 
