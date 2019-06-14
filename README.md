@@ -18,10 +18,10 @@ Use cors anywhere to solve a network rejection issue
 
 # Wireframes
 
-<img width="800" alt="image" src="https://user-images.githubusercontent.com/29616227/59503764-8ee8a180-8ea1-11e9-88db-f0f030d53014.jpg">
+<img width="600" position="center" alt="image" src="https://user-images.githubusercontent.com/29616227/59503764-8ee8a180-8ea1-11e9-88db-f0f030d53014.jpg">
 
 
-<img width="800" alt="image" src="https://user-images.githubusercontent.com/29616227/59503795-9e67ea80-8ea1-11e9-8792-7c3b0f2d6749.jpg">
+<img width="600" position="center" alt="image" src="https://user-images.githubusercontent.com/29616227/59503795-9e67ea80-8ea1-11e9-8792-7c3b0f2d6749.jpg">
 
 
 # Sneak Peak
