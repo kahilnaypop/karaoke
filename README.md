@@ -1,4 +1,8 @@
-![capture logic](./kahils-karaoke/src/images/dots.jpg)
+
+<p align="center">
+<img width="600" position="center" alt="image" src="https://user-images.githubusercontent.com/29616227/62827664-b7d79b00-bba1-11e9-8b11-41500428ce62.png">
+</p>
+
 
 # Karaoke 
 
