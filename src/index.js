@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import FeelingsForm from './components/FeelingsForm';
 import { BrowserRouter as Router } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bulma/css/bulma.css'
 
 ReactDOM.render(
   <Router>

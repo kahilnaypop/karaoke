@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
-import { Button, Form } from "semantic-ui-react";
 import axios from 'axios';
 import '../../App.css';
 import YTSearch from 'youtube-api-search';
 import Loading from '../layout/Loading';
+import { Nav, Button, FormControl, Navbar, Form } from 'react-bootstrap';
 import YouTubeSearch from '../YouTube/YouTubeSearch'
-
-
+import { Container } from 'semantic-ui-react';
 
 const musixApi = process.env.REACT_APP_MUSIX_API_KEY
 let youTubeKey = process.env.REACT_APP_YOUTUBE_API_KEY
-
+console.log(musixApi)
 
 class SearchForm extends Component {
   constructor(props) {
@@ -31,6 +30,7 @@ class SearchForm extends Component {
 
 
   findTrack(evt) {
+    console.log(evt, 'hey', evt.target.userInput.value)
     evt.preventDefault();
     let trackId
     fetch(
@@ -44,6 +44,7 @@ class SearchForm extends Component {
         });
         trackId = resp.message.body.track_list[0].track.track_id
       })
+      // console.log('yo')
       .catch(err => console.log(err));
   }
 
@@ -90,26 +91,18 @@ class SearchForm extends Component {
   handleVideoSelect = (video) => {
     this.setState({ selectedVideo: video })
   }
+
+
   render() {
     const { video } = this.state
-
-
-
     let trackIdd = this.state.searchedTrack.track_list && this.state.searchedTrack.track_list[0].track.track_id
       ? this.state.searchedTrack.track_list[0].track.track_id
-      : <Loading />;
-
-
+      : <loading />;
     let trackNamee = this.state.searchedTrack.track_list && this.state.searchedTrack.track_list[0].track.track_name
       ? null
-      : <Loading />;
-
-
-
-
+      : <loading />;
     let renderedLyrics = this.state.searchedTrack.track_list && this.state.searchedTrack.track_list.map(trackdata => {
       let { track_id, track_name, artist_name } = trackdata.track;
-
       return (
         <h2 className="clickasong"
           key={track_id}
@@ -119,49 +112,26 @@ class SearchForm extends Component {
     })
 
     return (
-      <div className="search-form">
-
-        <Form onSubmit={this.findTrack} >
-
-          Name:
-              <input
-            type="text"
-            name="userInput"
-            placeholder="Track title..."
-            pointer=""
+      <div className="search-form-container">
+        <div className="search-form">
+          <Form onSubmit={this.findTrack} inline>
+            <FormControl type="text" name="userInput" pointer="" placeholder="Search track" className="mr-sm-2" />
+            <Button type="submit" variant="outline-info">Search</Button>
+          </Form>
+          {renderedLyrics}
+          {trackNamee}
+          <YouTubeSearch
+            video={video}
           />
-          <button
-            className="submit-button"
-            value="Submit"
-
-          >Submit</button>
-
-        </Form>
-
-
-        {renderedLyrics}
-        {trackNamee}
-
-        <YouTubeSearch
-          video={video}
-        />
-
-
-        <div className="lyric-wrapper">
-          <div className="lyrics">
-            <h4 >{this.state.searchedLyrics} </h4>
+          <div className="lyric-wrapper">
+            <div className="lyrics">
+              <h4 >{this.state.searchedLyrics} </h4>
+            </div>
           </div>
         </div>
-
-
       </div>
-
-
     );
   }
 }
-
-
-
 
 export default SearchForm;
