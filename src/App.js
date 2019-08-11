@@ -66,7 +66,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className={'nav-right nav-menu' +menuActive}>
-          <Navbar bg="dark" variant="dark">
+          <Navbar bg="dark" variant="dark" pointer="">
             <Navbar.Brand href="/">Karaoke</Navbar.Brand>
             <Nav className="mr-auto">
               <Nav.Link href="/">Home</Nav.Link>
@@ -93,7 +93,7 @@ class App extends Component {
             render={() => <Tracks track={track} />} />
         </main>
         {/* ***** Footer ******÷ */}
-        <Navbar className="footer" sticky="bottom" bg="dark">
+        <Navbar className="Footer" sticky="bottom" bg="dark">
           <Navbar.Brand href="#home">
             <img
               src="/kk.png"

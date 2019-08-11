@@ -23,32 +23,21 @@ class Lyrics extends Component {
           .then(res => {
             this.setState({ lyrics: res.data.message.body.lyrics });
             console.log('res data', res.data)
-
-
           })
           .then(res => {
             this.setState({ track: res.data.message.body.track });
           })
           .catch(err => console.log(err));
       }
-
     renderTrackSearch = () => {
-
-
     }
 
 
     render() {
         const { searchedTrack } = this.props
-    
-
-
-        return (
+    return (
             <div>
-
                 {this.renderTrackSearch()}
-
-
             </div>
 
         );

@@ -9,7 +9,6 @@ class App extends React.Component {
     this.state = {
       videos: [],
       selectVid: null
-
     }
   }
 
@@ -27,10 +26,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-   
-      </div>
-
+      <div></div>
     )
   }
   }

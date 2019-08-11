@@ -44,7 +44,6 @@ class SearchForm extends Component {
         });
         trackId = resp.message.body.track_list[0].track.track_id
       })
-      // console.log('yo')
       .catch(err => console.log(err));
   }
 
@@ -111,6 +110,7 @@ class SearchForm extends Component {
       )
     })
 
+{/* ****** Sends search result to musix api **** */}    
     return (
       <div className="search-form-container">
         <div className="search-form">
@@ -118,8 +118,12 @@ class SearchForm extends Component {
             <FormControl type="text" name="userInput" pointer="" placeholder="Search track" className="mr-sm-2" />
             <Button type="submit" variant="outline-info">Search</Button>
           </Form>
+{/* ****** this renders 5 different songs and artists to choose from **** */}
           {renderedLyrics}
+{/* ******* this renders video, title and lyrics ****** */}
+          <div className="rendered-track">
           {trackNamee}
+          </div>
           <YouTubeSearch
             video={video}
           />

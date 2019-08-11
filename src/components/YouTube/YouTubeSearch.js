@@ -11,15 +11,17 @@ const YouTubeSearch = ({ video }) => {
     console.log(typeof (video));
     return (
         <React.Fragment >
-            <div className='ui segment'>
-                <h4 className='ui header'>{video.snippet.title}</h4>
-                {/* <p>{video.snippet.description}</p> */}
+            <div className='chosen-track-title-container'>
+                <div className='chosen-track-title'>
+                    <h4>{video.snippet.title}</h4>
+                    {/* <p>{video.snippet.description}</p> */}
+                </div>
             </div>
-            
-                <div className="lyricss">
-                
-                    <iframe src={videoSrc} allowFullScreen title='Video player' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                
+
+            <div className="lyricss">
+
+                <iframe src={videoSrc} allowFullScreen title='Video player' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
             </div>
 
 

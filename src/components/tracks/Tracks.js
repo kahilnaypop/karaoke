@@ -29,9 +29,7 @@ class Tracks extends Component {
 
                 <div>
                     {this.renderTracks()}
-
                  </div>
-
             );
         }
     }

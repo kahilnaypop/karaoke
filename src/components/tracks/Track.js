@@ -15,11 +15,8 @@ class Track extends Component {
         ))
 
         return (
-            <div>
-                
+            <div>     
             </div>
-
-
         );
     }
 }
