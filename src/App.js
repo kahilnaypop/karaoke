@@ -67,7 +67,15 @@ class App extends Component {
       <div className="App">
         <div className={'nav-right nav-menu' +menuActive}>
           <Navbar bg="dark" variant="dark" pointer="">
-            <Navbar.Brand href="/">Karaoke</Navbar.Brand>
+            <Navbar.Brand href="/">Karaoke
+            <img
+              src="/kk.png"
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+              alt="React Bootstrap logo"
+            />
+            </Navbar.Brand>
             <Nav className="mr-auto">
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/pickasong">Pick Song</Nav.Link>
@@ -92,8 +100,9 @@ class App extends Component {
           <Route path="/toptensongs"
             render={() => <Tracks track={track} />} />
         </main>
+
         {/* ***** Footer ******÷ */}
-        <Navbar className="Footer" sticky="bottom" bg="dark">
+        {/* <Navbar className="Footer" sticky="bottom" bg="dark">
           <Navbar.Brand href="#home">
             <img
               src="/kk.png"
@@ -103,7 +112,7 @@ class App extends Component {
               alt="React Bootstrap logo"
             />
           </Navbar.Brand>
-        </Navbar>
+        </Navbar> */}
       </div>
     );
   }

@@ -33,11 +33,15 @@ Use cors anywhere to solve a network rejection issue
 
 <!-- <img width="1440" alt="image" src="https://user-images.githubusercontent.com/29616227/59494562-b2095600-8e8d-11e9-8068-402e3bf06fc0.jpg"> -->
 
-
+<p align="center">
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/29616227/59494585-c5b4bc80-8e8d-11e9-9e4d-a831e7d9de1b.jpg">
+</p>
+
+<p align="center">
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/29616227/62828686-6982c600-bbba-11e9-939d-5e8fed62a098.gif">
+</p>
 
 
-<img width="1440" alt="image" src="https://user-images.githubusercontent.com/29616227/59494617-d5340580-8e8d-11e9-9084-33df06dbfd00.jpg">
 
 
 
