@@ -6,7 +6,7 @@
 
 # Karaoke 
 
-Create an app that gives a user options of what kind of genre, artist, bpm or feeling they want to sing. Take that information and fetch the song through Spotify's API while also fetching information from API seed (a lyric fetching API) then render the lyrics and song on the page. 
+Create an app that gives a user options of what kind of genre, artist they want to sing. Take that information and fetch the lyrics from musix API while also fetching the track from youtube API.
 
 ## Objective
 
