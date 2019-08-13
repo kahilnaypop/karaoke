@@ -76,7 +76,7 @@ class App extends Component {
               alt="React Bootstrap logo"
             />
             </Navbar.Brand>
-            <Nav className="mr-auto">
+            <Nav className="navigate">
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/pickasong">Pick Song</Nav.Link>
               <Nav.Link href="/toptensongs">Show Top Ten</Nav.Link>

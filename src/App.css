@@ -3,7 +3,8 @@ html, body {
   margin:0;
   min-height: 100vh;
   flex-direction: column;
-  background-image: linear-gradient(to top, #494949 0%, rgb(0, 0, 0) 100%);
+  background-image:
+  linear-gradient(to top, #494949 0%, rgb(0, 0, 0) 100%);
   font-family: sans-serif;
   display: flex;
 
@@ -14,11 +15,12 @@ html, body {
   text-align: center;
   display: flex;
   flex-direction: column;
-  height: 100%; /* 1, 3 */
-  /* height: 100vh;
-  width: 100vw; */
-  background-image: url("./images/karaoke3.jpg");
-  background-repeat: no-repeat;
+  height: 100%; 
+  height: 100vh;
+  background-image:
+  linear-gradient(to bottom, rgba(0, 0, 0, 0.692), rgba(128, 0, 128, 0.432)),
+  url("./images/karaoke3.jpg");
+  background-repeat: center no-repeat;
   /* height: 1000px;  */
   font-family: 'Orbitron', sans-serif;
   /* background-color: black; */
@@ -64,6 +66,8 @@ html, body {
 .lyric-wrapper {
   display: flex;
   padding: 10px;
+  /* opacity: 0; */
+  /* border: solid; */
 
 }
 
@@ -77,6 +81,7 @@ html, body {
   background-color: rgba(102, 102, 102, 0.603);
   width: 60%;
   color: rgb(255, 255, 255);
+  border: solid black;
 
 }
 
@@ -90,7 +95,16 @@ html, body {
   position: center;
   margin: auto;
   width: 50%;
+  padding-top: 25%;
+  font-size: 30px;
   color: rgb(255, 255, 255);
+  background-color: rgba(63, 21, 63, 0.562);
+ 
+}
+
+.help h1 {
+font-size: 20px;
+
 }
 
 
@@ -164,7 +178,7 @@ bottom: -90px;
   margin: auto;
   background-color: rgba(183, 184, 193, 0.8);
   font-size: 30px;
-  color: purple;
+  color: rgb(0, 0, 0)1, 3, 141);
   
   
 }
@@ -225,6 +239,43 @@ bottom: -90px;
     display: inline-block;
     padding: 0 0.25em;
   }
+}
+
+.navbar {
+  border: solid;
+  display: flex;
+
+}
+
+.nav-link {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+@media only screen and (max-width: 400px) {
+.lyrics {
+  border: solid;
+  width: 100%;
+} 
+
+.help {
+  width: 100%;
+  padding: 5%;
+}
+
+.navigate {
+  /* border: solid green; */
+  color: white;
+  margin: auto;
+  font-size: 10px;
+}
+
+.navigate a {
+  color: white;
+}
 }
 
 
