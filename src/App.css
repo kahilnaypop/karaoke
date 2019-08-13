@@ -255,6 +255,12 @@ bottom: -90px;
 
 }
 
+.home {
+  border: solid;
+}
+
+/* **** mobile **** */
+
 @media only screen and (max-width: 400px) {
 .lyrics {
   border: solid;
@@ -275,6 +281,20 @@ bottom: -90px;
 
 .navigate a {
   color: white;
+}
+
+.logo-header {
+  /* border: solid; */
+  margin: auto;
+  width: 30px;
+  padding: 0;
+
+}
+
+.nav-right {
+  border: solid;
+  display: flex;
+  width: 100%;
 }
 }
 

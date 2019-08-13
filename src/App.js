@@ -72,7 +72,7 @@ class App extends Component {
               src="/kk.png"
               width="30"
               height="30"
-              className="d-inline-block align-top"
+              className="logo-header"
               alt="React Bootstrap logo"
             />
             </Navbar.Brand>
